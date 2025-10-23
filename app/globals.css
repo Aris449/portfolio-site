@@ -42,4 +42,31 @@
     html {
         scrollbar-gutter: stable;
     }
+    .grid-container {
+        display: grid;
+        grid-template-columns: 320px 320px ;
+        grid-template-rows: 100px 100px 100px 100px 100px ;
+        gap: 1em;
+        grid-template-areas:"box-1 box-2"
+                            "box-1 box-2"
+                            "box-1 box-3"
+                            "box-4 box-3"
+                            "box-4 box-3";
+
+
+    }
+
+    .box-1 { grid-area: box-1; }
+    .box-2 { grid-area: box-2; }
+    .box-3 { grid-area: box-3; }
+    .box-4 { grid-area: box-4; }
+
+    @media(max-width: 767px) {
+        .grid-container{
+          display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
 }
+
