@@ -11,7 +11,13 @@ type AnimatedWrapperProps = {
     className?: string;
 };
 
-export const AnimatedWrapper = ({children, stagger = 0.2, duration = 0.7, yPercent = 100, className = "",}: AnimatedWrapperProps) => {
+export const AnimatedWrapper = ({
+                                    children,
+                                    stagger = 0.2,
+                                    duration = 0.7,
+                                    yPercent = 100,
+                                    className = "",
+                                }: AnimatedWrapperProps) => {
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     useGSAP(() => {
@@ -28,8 +34,10 @@ export const AnimatedWrapper = ({children, stagger = 0.2, duration = 0.7, yPerce
         <div className={className}>
             {React.Children.map(children, (child, i) => {
                 if (React.isValidElement(child)) {
-                    return React.cloneElement(child as React.ReactElement<any>, {
-                        ref: (el: HTMLDivElement | null) => (itemsRef.current[i] = el),
+                    return React.cloneElement(child as React.ReactElement<{ ref?: React.Ref<HTMLDivElement> }>, {
+                        ref: (el: HTMLDivElement | null) => {
+                            itemsRef.current[i] = el;
+                        },
                     });
                 }
                 return child;
