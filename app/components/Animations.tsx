@@ -11,13 +11,7 @@ type AnimatedWrapperProps = {
     className?: string;
 };
 
-export const AnimatedWrapper = ({
-                                    children,
-                                    stagger = 0.2,
-                                    duration = 0.7,
-                                    yPercent = 100,
-                                    className = "",
-                                }: AnimatedWrapperProps) => {
+export const AnimatedWrapper = ({children, stagger = 0.2, duration = 0.7, yPercent = 100, className = "",}: AnimatedWrapperProps) => {
     const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
     useGSAP(() => {
