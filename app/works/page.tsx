@@ -28,27 +28,53 @@ const projects = [
         ]
 
 
-    }
+    },
+    {
+        id:2,
+        title: "Project-1",
+        description:"Project description",
+        imgSrc:"/portfolio-img.png",
+        tools: [
+            {
+                description:"Next.js",
+                imgSrc:"/nextJs-icon.png",
+            },
+            {
+                description:"TS",
+                imgSrc:"/typescript-icon.png",
+            },
+            {
+                description:"tailwindCSS",
+                imgSrc:"/tailwind-icon.png",
+            },
+            {
+                description:"Gsap",
+                imgSrc:"/gsap-icon.png",
+            }
+        ]
+
+
+    },
+
 ]
 
 const Works = () => {
     return (
-        <div className="flex justify-center items-center min-h-[calc(100vh-14rem)]">
-            <AnimatedWrapper>
+            <AnimatedWrapper className="flex  flex-wrap works-container justify-center items-center gap-8 my-4 lg:m-0 min-h-[calc(100vh-14rem)]">
                 {projects.map(project => (
 
                     <div key={project.id} className="flex flex-col gap-4">
-                        <div className="flex gap-6 justify-center items-center">
+                        <div className="hidden md:flex gap-6 justify-center items-center bg-bg rounded-full p-2 border border-[hsl(0,0%,20%)]">
                             {project.tools.map((tool,idx) => (
-                                <div key={idx} className="hidden  md:flex justify-center items-center gap-2 ">
+                                <div key={idx} className="flex justify-center items-center gap-2 ">
                                     <Image src={tool.imgSrc} alt="" width={30} height={30} className="object-contain" />
-                                    <span className="text-xl font-bold">{tool.description}</span>
+                                    <span className="text-xl font-bold text-text-muted ">{tool.description}</span>
                                 </div>
                             ))}
 
                         </div>
-                        <div className="flex flex-col justify-center w-80 md:w-xl  lg:h-120 bg-bg rounded-2xl">
-                            <Image src={project.imgSrc} alt="" width={576} height={320} className="object-contain " />
+                        <div className="flex flex-col justify-center w-80 md:w-xl lg:h-120 bg-bg rounded-2xl border border-[hsl(0,0%,20%)]">
+                            <Image src={project.imgSrc} alt="" width={576} height={320} className="object-contain rounded-2xl" />
                             <div className="flex flex-col gap-4 p-8 h-full">
                                 <h2 className="text-4xl font-bold">{project.title}</h2>
                                 <p className="text-text-muted text-xl">{project.description}</p>
@@ -60,7 +86,6 @@ const Works = () => {
             </AnimatedWrapper>
 
 
-        </div>
     )
 }
 

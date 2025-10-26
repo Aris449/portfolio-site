@@ -42,6 +42,15 @@
     html {
         scrollbar-gutter: stable;
     }
+
+    /*@media (max-width: px) {*/
+    /*    .works-container {*/
+    /*        display: flex;*/
+    /*        flex-direction: column;*/
+    /*    }*/
+
+    /*}*/
+
     .grid-container {
         display: grid;
         grid-template-columns: 320px 320px ;
