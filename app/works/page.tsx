@@ -29,32 +29,6 @@ const projects = [
 
 
     },
-    {
-        id:2,
-        title: "Project-1",
-        description:"Project description",
-        imgSrc:"/portfolio-img.png",
-        tools: [
-            {
-                description:"Next.js",
-                imgSrc:"/nextJs-icon.png",
-            },
-            {
-                description:"TS",
-                imgSrc:"/typescript-icon.png",
-            },
-            {
-                description:"tailwindCSS",
-                imgSrc:"/tailwind-icon.png",
-            },
-            {
-                description:"Gsap",
-                imgSrc:"/gsap-icon.png",
-            }
-        ]
-
-
-    },
 
 ]
 
@@ -64,7 +38,7 @@ const Works = () => {
                 {projects.map(project => (
 
                     <div key={project.id} className="flex flex-col gap-4">
-                        <div className="hidden md:flex gap-6 justify-center items-center bg-bg rounded-full p-2 border border-[hsl(0,0%,20%)]">
+                        <div className="hidden md:flex gap-6 justify-center items-center bg-bg rounded-full p-2 border  border-theme">
                             {project.tools.map((tool,idx) => (
                                 <div key={idx} className="flex justify-center items-center gap-2 ">
                                     <Image src={tool.imgSrc} alt="" width={30} height={30} className="object-contain" />
@@ -73,7 +47,7 @@ const Works = () => {
                             ))}
 
                         </div>
-                        <div className="flex flex-col justify-center w-80 md:w-xl lg:h-120 bg-bg rounded-2xl border border-[hsl(0,0%,20%)]">
+                        <div className="flex flex-col justify-center w-80 md:w-xl lg:h-120 bg-bg rounded-2xl border  border-theme">
                             <Image src={project.imgSrc} alt="" width={576} height={320} className="object-contain rounded-2xl" />
                             <div className="flex flex-col gap-4 p-8 h-full">
                                 <h2 className="text-4xl font-bold">{project.title}</h2>

@@ -39,3 +39,37 @@ export const AnimatedWrapper = ({children, stagger = 0.2, duration = 0.7, yPerce
         </div>
     );
 };
+
+type hoverBtnProps = {
+    children: ReactElement | ReactElement[];
+    duration?: number;
+    className?: string;
+}
+
+export const HoverBtn = ({children, duration = 0.3, className}: hoverBtnProps) => {
+    const btnRef = useRef<HTMLDivElement | null>(null);
+
+    const handleEnter = () => {
+        gsap.to(btnRef.current, {
+            y: -3,
+            duration: duration,
+            ease: "power2.out",
+        })
+    }
+
+    const handleLeave = () => {
+        gsap.to(btnRef.current, {
+            y: 0,
+            duration: duration,
+            ease: "power2.inOut",
+        })
+    }
+
+    return (
+        <div ref={btnRef} onMouseEnter={handleEnter} onMouseLeave={handleLeave} className={className} >
+            {children}
+        </div>
+    )
+}
+
+

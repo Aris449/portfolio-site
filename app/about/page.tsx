@@ -38,7 +38,7 @@ const About = () => {
 
             <AnimatedWrapper className="grid-container my-10 w-80 md:w-[658px] " >
                 {cards.map((card) => (
-                    <div key={card.id} className={`flex flex-col justify-center items-center grid-area: ${card.styles} p-6 bg-bg w-full rounded-2xl text-center border border-[hsl(0,0%,20%)]`}>
+                    <div key={card.id} className={`flex flex-col justify-center items-center grid-area: ${card.styles} p-6 bg-bg w-full rounded-2xl text-center border  border-theme`}>
                         <h2 className="text-3xl font-bold "> {card.title}</h2>
                         <div className={`${card.content.length > 4 ? "grid grid-cols-2 gap-x-8 gap-y-4": "flex flex-col gap-x-8 gap-y-4"} `}>
                             {card.content.map((content, idx) => (
@@ -46,7 +46,7 @@ const About = () => {
                                 //     {card.images?.[idx] && (
                                 //         <Image src={card.images[idx]} alt="" width={30} height={30} className="object-contain bg-bg-light rounded-2xl " />
                                 //     )}
-                                    <span key={idx}  className="p-2 px-4 bg-bg-light font-semibold rounded-2xl text-text-muted border border-[hsl(0,0%,20%)]">{content}</span>
+                                    <span key={idx}  className="p-2 px-4 bg-bg-light font-semibold rounded-2xl text-text-muted border border-theme">{content}</span>
                                 // </div>
                             ))}
                         </div>
