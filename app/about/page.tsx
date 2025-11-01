@@ -1,6 +1,5 @@
 import React  from 'react';
 import {AnimatedWrapper} from "@/app/components/Animations";
-import Image from "next/image";
 
 const cards = [
     {

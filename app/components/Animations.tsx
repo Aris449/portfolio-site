@@ -72,4 +72,55 @@ export const HoverBtn = ({children, duration = 0.3, className}: hoverBtnProps) =
     )
 }
 
+export default function MagneticButton({children, strength = 150,}: { children: React.ReactNode; strength?: number; }) {
+    const btnRef = useRef<HTMLDivElement | null>(null);
+
+    useGSAP(() => {
+        const btn = btnRef.current;
+        if (!btn) return;
+
+        const handleMouseMove = (e: MouseEvent) => {
+            const rect = btn.getBoundingClientRect();
+            const btnX = rect.left + rect.width / 2;
+            const btnY = rect.top + rect.height / 2;
+
+            const distX = e.clientX - btnX;
+            const distY = e.clientY - btnY;
+
+            const distance = Math.sqrt(distX * distX + distY * distY);
+
+            if (distance < strength) {
+                gsap.to(btn, {
+                    x: distX * 0.3,
+                    y: distY * 0.3,
+                    duration: 0.3,
+                    ease: "power3.out",
+                });
+            } else {
+                gsap.to(btn, {
+                    x: 0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: "elastic.out(1, 0.4)",
+                });
+            }
+        };
+
+        window.addEventListener("mousemove", handleMouseMove);
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+        };
+    }, [strength]);
+
+    return (
+        <div
+            ref={btnRef}
+            className="magnetic-btn inline-block"
+            style={{ display: "inline-block" }}
+        >
+            {children}
+        </div>
+    );
+}
 

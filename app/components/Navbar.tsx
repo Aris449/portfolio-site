@@ -30,6 +30,7 @@ function Navbar() {
         <nav className="flex items-center justify-center h-28">
 
             <div className="flex items-center justify-center gap-4">
+
                 {links.map((link) => (
                     <HoverBtn key={link.id}>
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {AnimatedWrapper} from "@/app/components/Animations";
+import MagneticButton, {AnimatedWrapper} from "@/app/components/Animations";
 
 export default function Home() {
   return (
@@ -9,7 +9,9 @@ export default function Home() {
            <div className="flex flex-col justify-center w-2/3">
             <h1 className="text-4xl py-2 md:py-4 font-bold">hi, I&apos;m Dmytro</h1>
             <p className="text-xl text-text-muted py-2">a web developer</p>
+               <MagneticButton>
             <Link href="/about" className="flex justify-center items-center bg-bg-accent p-4 my-1 md:my-4 rounded-2xl w-40 text-xl font-bold border  border-theme">Learn more about me</Link>
+               </MagneticButton>
            </div>
        </div>
        </AnimatedWrapper>
