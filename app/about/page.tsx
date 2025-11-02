@@ -6,7 +6,6 @@ const cards = [
         id: 1,
         title: "Dev. Tools",
         content: ["JS","TS","Tailwind","React", "Next.js", "Express", "Gsap", "Python"],
-        images:["/js-icon.png","/typescript-icon.png", "/tailwind-icon.png","/react-icon.png","/nextJs-icon.png","/express-icon.png","/gsap-icon.png","/python-icon.png"],
         styles: "box-1 gap-8 "
     },
     {
