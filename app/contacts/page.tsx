@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from "next/link";
-import MagneticButton, {AnimatedWrapper} from "@/app/components/Animations";
+import {AnimatedWrapper} from "@/app/components/Animations";
 
 const Contacts = () => {
     return (
@@ -11,10 +11,7 @@ const Contacts = () => {
                 <div className="flex flex-col justify-center m-10 md:m-20 gap-4">
                     <h1 className="text-4xl py-2 md:py-4 font-bold">Email</h1>
                     <p className="text-xl text-text-muted py-2">The easiest way to contact me is through the Email</p>
-                    <MagneticButton>
-
-                    <Link href="#" className="flex justify-center items-center bg-bg-accent p-4 my-1 md:my-4 rounded-2xl w-40 text-xl font-bold border  border-theme">Contact</Link>
-                    </MagneticButton>
+                    <Link href="#" className="flex justify-center items-center btn-whimsical  bg-bg-accent p-4 my-1 md:my-4 rounded-2xl w-40 text-xl font-bold border  border-theme">Contact</Link>
                 </div>
             </div>
         </div>

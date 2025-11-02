@@ -5,8 +5,8 @@ import {AnimatedWrapper} from "@/app/components/Animations";
 const projects = [
     {
         id:1,
-        title: "Project-1",
-        description:"Project description",
+        title: "Portfolio site",
+        description:"This website, simple portfolio powered by nextJs and animated using GSAP",
         imgSrc:"/portfolio-img.png",
         tools: [
             {
@@ -47,9 +47,9 @@ const Works = () => {
                             ))}
 
                         </div>
-                        <div className="flex flex-col justify-center w-80 md:w-xl lg:h-120 bg-bg rounded-2xl border  border-theme">
+                        <div className="flex flex-col  justify-center w-80 md:w-xl lg:h-120 bg-bg rounded-2xl border  border-theme">
                             <Image src={project.imgSrc} alt="" width={576} height={320} className="object-contain rounded-2xl" />
-                            <div className="flex flex-col gap-4 p-8 h-full">
+                            <div className="flex flex-col gap-4 p-4 h-full">
                                 <h2 className="text-4xl font-bold">{project.title}</h2>
                                 <p className="text-text-muted text-xl">{project.description}</p>
                             </div>

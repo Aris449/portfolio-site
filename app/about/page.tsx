@@ -1,5 +1,5 @@
 import React  from 'react';
-import {AnimatedWrapper} from "@/app/components/Animations";
+import {AnimatedWrapper, HoverBtn} from "@/app/components/Animations";
 
 const cards = [
     {
@@ -41,12 +41,9 @@ const About = () => {
                         <h2 className="text-3xl font-bold "> {card.title}</h2>
                         <div className={`${card.content.length > 4 ? "grid grid-cols-2 gap-x-8 gap-y-4": "flex flex-col gap-x-8 gap-y-4"} `}>
                             {card.content.map((content, idx) => (
-                                // <div key={idx} className="flex gap-2">
-                                //     {card.images?.[idx] && (
-                                //         <Image src={card.images[idx]} alt="" width={30} height={30} className="object-contain bg-bg-light rounded-2xl " />
-                                //     )}
-                                    <span key={idx}  className="p-2 px-4 bg-bg-light font-semibold rounded-2xl text-text-muted border border-theme">{content}</span>
-                                // </div>
+                                <HoverBtn y={3}  key={idx} className="p-2 px-4 bg-bg-light font-semibold rounded-2xl text-text-muted border border-theme ">
+                                    <span >{content}</span>
+                                </HoverBtn>
                             ))}
                         </div>
                     </div>
